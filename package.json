@@ -2,6 +2,7 @@
   "name": "fer-scrumlab-react",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://pepe199111.github.io/Nutrition/",
   "dependencies": {
     "json-server": "^0.15.0",
     "node-sass": "^4.14.1",
@@ -15,7 +16,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "api": "json-server database/db.json"
+    "api": "json-server database/db.json",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
