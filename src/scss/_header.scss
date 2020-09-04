@@ -1,0 +1,39 @@
+.header {
+    width: 100%;
+    height: $header-height;
+    background-color: $nav-color;
+}
+
+.header .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4rem;
+    height: inherit;
+}
+
+.logo {
+    font-family: $logo-font;
+    font-size: 3rem;
+    color: #fff;
+}
+
+.logo span {
+    color: #E58A20;
+}
+
+.header__nav__list__el {
+    display: inline-block;
+    list-style: none;
+    text-transform: uppercase;
+}
+
+.header__nav__list a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 7rem;
+}
+
+.header__nav__list__el-app a {
+    color: #E58A20;
+}

@@ -1,0 +1,51 @@
+.form-subscription {
+    width: 100%;
+    background-color: $nav-color;
+}
+
+.form-subscription__wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 3rem 5rem;
+    max-width: 137rem;
+    margin: 0 auto;
+}
+
+.form-subscription__title {
+    color: $bg-color;
+    font-size: 2rem;
+}
+
+.form-subscription__form {
+    height: 3rem;
+}
+
+.form-subscription__form__input {
+    width: 15rem;
+    padding: 0.5rem;
+}
+
+.form-subscription__form__btn {
+    width: 6rem;
+    background-color: $btn-color;
+    color: $bg-color;
+    font-weight: 700;
+    
+}
+
+.form-subscription__form__input, .form-subscription__form__btn {
+    height: 100%;
+    border: none;
+}
+
+.form-subscription__info {
+    color: $success-msg;
+    font-weight: 700;
+    margin-top: 0.5rem;
+}
+
+.form-subscription__error {
+    color: $delete-color;
+    font-weight: 700;
+    margin-top: 0.5rem;
+}

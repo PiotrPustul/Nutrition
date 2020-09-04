@@ -1,0 +1,43 @@
+@import "./variables";
+@import "./reset";
+
+.call-to-action__container {
+    width: 100%;
+    background: $nav-color;
+}
+
+.call-to-action__container .wrapper {
+    padding: 4rem 5rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .call-to-action__container__col-1 {
+        width: 65%;
+        color: $bg-color;
+        display: flex;
+        flex-direction: column;
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.2rem;
+        }
+    }
+
+    .call-to-action__container__col-2 {
+        a {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            background-color: $btn-color;
+            border: none;
+            padding: 1rem 3.57rem;
+            outline: none;
+            cursor: pointer;
+        }
+    }
+
+}
+ 
