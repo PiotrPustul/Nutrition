@@ -1,30 +1,30 @@
 {
   "files": {
-    "main.css": "/static/css/main.5a2f0a91.chunk.css",
-    "main.js": "/static/js/main.f45d6fff.chunk.js",
-    "main.js.map": "/static/js/main.f45d6fff.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.2fc72b05.js",
-    "runtime-main.js.map": "/static/js/runtime-main.2fc72b05.js.map",
-    "static/css/2.afd40c00.chunk.css": "/static/css/2.afd40c00.chunk.css",
-    "static/js/2.79a8e4cd.chunk.js": "/static/js/2.79a8e4cd.chunk.js",
-    "static/js/2.79a8e4cd.chunk.js.map": "/static/js/2.79a8e4cd.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.eb21393b2b39aa2a90f6580290c769de.js": "/precache-manifest.eb21393b2b39aa2a90f6580290c769de.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/2.afd40c00.chunk.css.map": "/static/css/2.afd40c00.chunk.css.map",
-    "static/css/main.5a2f0a91.chunk.css.map": "/static/css/main.5a2f0a91.chunk.css.map",
-    "static/js/2.79a8e4cd.chunk.js.LICENSE.txt": "/static/js/2.79a8e4cd.chunk.js.LICENSE.txt",
-    "static/media/about-app-1.jpg": "/static/media/about-app-1.59706e22.jpg",
-    "static/media/about-app-2.jpg": "/static/media/about-app-2.54e8d139.jpg",
-    "static/media/about-app-3.jpg": "/static/media/about-app-3.257e88d9.jpg",
-    "static/media/about-author.jpg": "/static/media/about-author.4c1ae61a.jpg",
-    "static/media/main.scss": "/static/media/bcg-app.baa58c3c.png"
+    "main.css": "/Nutrition/static/css/main.95110307.chunk.css",
+    "main.js": "/Nutrition/static/js/main.d6fddd10.chunk.js",
+    "main.js.map": "/Nutrition/static/js/main.d6fddd10.chunk.js.map",
+    "runtime-main.js": "/Nutrition/static/js/runtime-main.022d92d7.js",
+    "runtime-main.js.map": "/Nutrition/static/js/runtime-main.022d92d7.js.map",
+    "static/css/2.afd40c00.chunk.css": "/Nutrition/static/css/2.afd40c00.chunk.css",
+    "static/js/2.79a8e4cd.chunk.js": "/Nutrition/static/js/2.79a8e4cd.chunk.js",
+    "static/js/2.79a8e4cd.chunk.js.map": "/Nutrition/static/js/2.79a8e4cd.chunk.js.map",
+    "index.html": "/Nutrition/index.html",
+    "precache-manifest.42f4552078694e8ddf4496933a6dcaff.js": "/Nutrition/precache-manifest.42f4552078694e8ddf4496933a6dcaff.js",
+    "service-worker.js": "/Nutrition/service-worker.js",
+    "static/css/2.afd40c00.chunk.css.map": "/Nutrition/static/css/2.afd40c00.chunk.css.map",
+    "static/css/main.95110307.chunk.css.map": "/Nutrition/static/css/main.95110307.chunk.css.map",
+    "static/js/2.79a8e4cd.chunk.js.LICENSE.txt": "/Nutrition/static/js/2.79a8e4cd.chunk.js.LICENSE.txt",
+    "static/media/about-app-1.jpg": "/Nutrition/static/media/about-app-1.59706e22.jpg",
+    "static/media/about-app-2.jpg": "/Nutrition/static/media/about-app-2.54e8d139.jpg",
+    "static/media/about-app-3.jpg": "/Nutrition/static/media/about-app-3.257e88d9.jpg",
+    "static/media/about-author.jpg": "/Nutrition/static/media/about-author.4c1ae61a.jpg",
+    "static/media/main.scss": "/Nutrition/static/media/bcg-app.baa58c3c.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.2fc72b05.js",
+    "static/js/runtime-main.022d92d7.js",
     "static/css/2.afd40c00.chunk.css",
     "static/js/2.79a8e4cd.chunk.js",
-    "static/css/main.5a2f0a91.chunk.css",
-    "static/js/main.f45d6fff.chunk.js"
+    "static/css/main.95110307.chunk.css",
+    "static/js/main.d6fddd10.chunk.js"
   ]
 }
