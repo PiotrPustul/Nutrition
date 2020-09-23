@@ -43,7 +43,7 @@ export default class MainApp extends Component {
             <div className="wrapper app">
                 <Router>
                     <header className="header header-app">
-                        <h1 className="logo">Zaplanuj <span>jedzonko</span></h1>
+                        <h1 className="logo">Plan <span>your food</span></h1>
                         <div className="header-app__wrapper">
                             <span className="header-app__wrapper__name">{this.state.name}</span>
                             <i className="fas fa-user-circle"></i>
@@ -53,8 +53,8 @@ export default class MainApp extends Component {
                         <nav className="app-side__nav">
                             <ul className="app-side__nav__list">
                                 <li><Link exact to="/app/" activeClassName="active-link">Pulpit</Link></li>
-                                <li><Link to="/app/recipes" activeClassName="active-link">Przepisy</Link></li>
-                                <li><Link to="/app/schedules" activeClassName="active-link">Plany</Link></li>
+                                <li><Link to="/app/recipes" activeClassName="active-link">Recipes</Link></li>
+                                <li><Link to="/app/schedules" activeClassName="active-link">Plans</Link></li>
                             </ul>
                         </nav>
                     </div>

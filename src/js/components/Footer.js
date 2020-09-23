@@ -13,7 +13,7 @@ export default class Footer extends React.Component {
     handleClick = (e) => {
         e.preventDefault()
 
-        if(this.state.inputValue.includes("@")) {
+        if (this.state.inputValue.includes("@")) {
             this.setState({
                 isSubmit: true,
                 inputErr: false
@@ -32,26 +32,25 @@ export default class Footer extends React.Component {
                 <div className="wrapper">
                     <div className="footer__info">
                         <div className="footer__info__col footer__info__col-1">
-                            <h2 className="footer__info__col__title">Lorem ipsum dolor</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem.  Aliquam erat volutpat. Donec placerat nisl magna.</p>
+                            <h2 className="footer__info__col__title">Plan your meal</h2>
+                            <p>Food Education the best investment in health.</p>
                         </div>
                         <div className="footer__info__col footer__info__col-2">
-                            <h2 className="footer__info__col__title">Lorem ipsum dolor</h2>
+                            <h2 className="footer__info__col__title">Contact</h2>
                             <ul className="footer__info__col__list">
-                                <li>consectetur adipiscing elit</li>
-                                <li>sed do eiusmod tempor</li>
-                                <li>incididunt ut labore</li>
-                                <li>et dolore magna aliqua</li>
+                                <li>+44 7567384924</li>
+                                <li>Planyourfood@gmail.com</li>
+                                <li>SW00 1SR London </li>
                             </ul>
                         </div>
                         <div className="footer__info__col footer__info__col-3">
-                            <h2 className="footer__info__col__title">Lorem ipsum dolor</h2>
+                            <h2 className="footer__info__col__title">Sign up for free newsletter</h2>
                             <form className="footer__info__col__form" onSubmit={this.handleClick}>
-                                <input className="footer__info__col__form__input" value={this.state.inputValue} onChange={(e) => this.setState({inputValue: e.target.value})}></input>
-                                <button className="footer__info__col__form__btn">Lorem</button>
+                                <input className="footer__info__col__form__input" value={this.state.inputValue} onChange={(e) => this.setState({ inputValue: e.target.value })}></input>
+                                <button className="footer__info__col__form__btn">Sign</button>
                             </form>
                             {this.state.isSubmit && <p className="form-subscription__info">You have subscribed to newsletter!</p>}
-                            {this.state.inputErr && <p className="form-subscription__error">Email should include "@"</p>}  
+                            {this.state.inputErr && <p className="form-subscription__error">Email should include "@"</p>}
                             <div className="footer__info__col__icons">
                                 <i className="fab fa-facebook-square fa-2x"></i>
                                 <i className="fab fa-twitter-square fa-2x"></i>
@@ -61,7 +60,7 @@ export default class Footer extends React.Component {
                     </div>
                 </div>
                 <div className="footer__rights">
-                    <p>Copyright <span>Zaplanujjedzonko.pl</span></p>
+                    <p>Copyright <span>Planyourmeal.co.uk</span></p>
                 </div>
             </footer>
         )

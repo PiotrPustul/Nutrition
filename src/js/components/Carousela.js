@@ -11,16 +11,16 @@ class Carousela extends Component {
                 <div className="wrapper">
                     <Carousel showThumbs={false} infiniteLoop>
                         <div className="carousel__slide">
-                            <h2>Lorem ipsum dolor sit amet</h2>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe, illo rerum quam placeat aperiam et sint blanditiis nulla, doloremque nesciunt, illum dolor architecto voluptas non quod tempora. Omnis vero doloremque similique corporis sed, ipsa fuga ducimus quaerat cumque et numquam? Consectetur, cum aut omnis autem accusamus minima suscipit? Nulla, excepturi!</p>
+                            <h2>FOR US, HEALTHY EATING IS AN EVERYDAY PART OF THE LIFESTYLE</h2>
+                            <p>During individual meetings we learn about your needs and look for the right solutions to achieve the best results for your health You decide which of them will become a permanent part of your everyday life style!</p>
                         </div>
                         <div className="carousel__slide">
-                            <h2>Lorem ipsum dolor sit amet</h2>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe, illo rerum quam placeat aperiam et sint blanditiis nulla, doloremque nesciunt, illum dolor architecto voluptas non quod tempora. Omnis vero doloremque similique corporis sed, ipsa fuga ducimus quaerat cumque et numquam? Consectetur, cum aut omnis autem accusamus minima suscipit? Nulla, excepturi!</p>
+                            <h2>PROFESSIONALIZM</h2>
+                            <p>We are experienced specialists. We will share with you current and reliable knowledge about healthy eating Awareness of your body's needs will allow us to plan an individual nutrition profile for you and help shape your eating habits!</p>
                         </div>
                         <div className="carousel__slide">
-                            <h2>Lorem ipsum dolor sit amet</h2>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe, illo rerum quam placeat aperiam et sint blanditiis nulla, doloremque nesciunt, illum dolor architecto voluptas non quod tempora. Omnis vero doloremque similique corporis sed, ipsa fuga ducimus quaerat cumque et numquam? Consectetur, cum aut omnis autem accusamus minima suscipit? Nulla, excepturi!</p>
+                            <h2>COMPREHENSIVE APPROACH</h2>
+                            <p>Using modern diagnostic tests, we combine prevention with nutritional knowledge to support you in the process of change You will get to know your body better, understand its needs and plan healthy eating for you and your family!</p>
                         </div>
                     </Carousel>
                 </div>

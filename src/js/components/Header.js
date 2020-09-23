@@ -1,7 +1,6 @@
 import React from "react";
-import {HashRouter as Router, Link} from "react-router-dom";
+import { HashRouter as Router, Link } from "react-router-dom";
 import { HashLink } from 'react-router-hash-link';
-
 
 export default class Header extends React.Component {
     render() {
@@ -9,29 +8,29 @@ export default class Header extends React.Component {
             <Router>
                 <header className="header">
                     <div className="wrapper">
-                        <h1 className="logo">Zaplanuj <span>jedzonko</span></h1>
-                        <nav className= "header__nav">
+                        <h1 className="logo">Plan <span>your food</span></h1>
+                        <nav className="header__nav">
                             <ul className="header__nav__list">
                                 <li className="header__nav__list__el header__nav__list__el-app">
-                                    <Link to="/app">Zaplanuj posiłki!</Link>
+                                    <Link to="/app">Plan your meals!</Link>
                                 </li>
                                 <li className="header__nav__list__el">
-                                    <HashLink 
-                                        to="/#dlaczegowarto" 
+                                    <HashLink
+                                        to="/#dlaczegowarto"
                                         scroll={el => el.scrollIntoView({ behavior: 'smooth', block: 'center' })}
-                                    >Dlaczego warto?</HashLink>
+                                    >Why?</HashLink>
                                 </li>
                                 <li className="header__nav__list__el">
-                                    <HashLink 
-                                        to="/#omnie" 
+                                    <HashLink
+                                        to="/#omnie"
                                         scroll={el => el.scrollIntoView({ behavior: 'smooth', block: 'center' })}
-                                    >O mnie</HashLink>
+                                    >About</HashLink>
                                 </li>
                                 <li className="header__nav__list__el">
-                                    <HashLink 
-                                        to="/#kontakt" 
+                                    <HashLink
+                                        to="/#kontakt"
                                         scroll={el => el.scrollIntoView({ behavior: 'smooth', block: 'center' })}
-                                    >Kontakt</HashLink>
+                                    >Contact</HashLink>
                                 </li>
                             </ul>
                         </nav>

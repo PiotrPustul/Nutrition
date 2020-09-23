@@ -17,7 +17,7 @@ export default class AddSchedule extends Component {
             friday: [],
             saturday: [],
             sunday: [],
-            meals: ["śniadanie", "drugie śniadanie", "zupa", "drugie danie", "kolacja"],
+            meals: ["breakfast", "lunch", "soup", "Main", "dinner"],
             weekdays: [{ pl: "poniedziałek", en: "monday" }, { pl: "wtorek", en: "tuesday" }, { pl: "środa", en: "wednesday" }, { pl: "czwartek", en: "thursday" }, { pl: "piątek", en: "friday" }, { pl: "sobota", en: "saturday" }, { pl: "niedziela", en: "sunday" }],
             recipes: [],
             isSuccess: false,
@@ -57,15 +57,15 @@ export default class AddSchedule extends Component {
         const { name, weekNumber } = this.state
 
         if (!name.length) {
-            nameErr = "Pole wymagane"
+            nameErr = "Required field"
         }
 
         if (!weekNumber.length) {
-            weekNumberErr = "Pole wymagane"
+            weekNumberErr = "Required field"
         }
 
         if (parseFloat(weekNumber) < 1 || parseFloat(weekNumber) > 52) {
-            weekNumberErr = "Nieprawidłowa wartość pola"
+            weekNumberErr = "Incorrect value"
         }
 
         if (nameErr || weekNumberErr) {
@@ -193,28 +193,28 @@ export default class AddSchedule extends Component {
             <div className="modal">
                 <button className="modal__btn" onClick={this.handleClick}>
                     <i className="far fa-plus-square"></i>
-                    <span>Dodaj plan</span>
+                    <span>Add Plan</span>
                 </button>
                 <div className="modal__popup-add-schedule" style={{ display: this.state.display }}>
                     <form className="modal__popup-add-schedule__form" onSubmit={(e) => this.closeAndSave(e, this.state.name, this.state.description, this.state.weekNumber, this.state.monday, this.state.tuesday, this.state.wednesday, this.state.thursday, this.state.friday, this.state.saturday, this.state.sunday)}>
                         <header className="modal__popup-add-schedule__form__header">
-                            <h1 className="modal__popup-add-schedule__form__header__title">Nowy plan</h1>
-                            <button className="modal__popup-add-schedule__form__header__btn">Zapisz i zamknij</button>
+                            <h1 className="modal__popup-add-schedule__form__header__title">New plan</h1>
+                            <button className="modal__popup-add-schedule__form__header__btn">Save and close</button>
                         </header>
                         <span className="modal__popup-add-schedule__form__division"></span>
-                        <p style={{fontSize:"1rem", color:"red", fontWeight:"bold"}}>{this.state.nameErr}</p>
+                        <p style={{ fontSize: "1rem", color: "red", fontWeight: "bold" }}>{this.state.nameErr}</p>
                         <div className="modal__popup-add-schedule__form__row">
-                            <label className="modal__popup-add-schedule__form__label" htmlFor="name">Nazwa planu</label>
+                            <label className="modal__popup-add-schedule__form__label" htmlFor="name">Plan name</label>
                             <input maxLength="50" type="text" id="name" value={this.state.name} onChange={this.formChange}></input>
                         </div>
                         <div className="modal__popup-add-schedule__form__row">
-                            <label className="modal__popup-add-schedule__form__label" htmlFor="description">Opis planu</label>
+                            <label className="modal__popup-add-schedule__form__label" htmlFor="description">Plan description</label>
                             <textarea maxLength="360" id="description" value={this.state.description} onChange={this.formChange}></textarea>
                         </div>
 
-                        <p style={{fontSize:"1rem", color:"red", fontWeight:"bold"}}>{this.state.weekNumberErr}</p>
+                        <p style={{ fontSize: "1rem", color: "red", fontWeight: "bold" }}>{this.state.weekNumberErr}</p>
                         <div className="modal__popup-add-schedule__form__row">
-                            <label className="modal__popup-add-schedule__form__label" htmlFor="weekNumber">Numer tygodnia</label>
+                            <label className="modal__popup-add-schedule__form__label" htmlFor="weekNumber">Week number</label>
                             <input type="number" id="weekNumber" value={this.state.weekNumber} onChange={this.formChange}></input>
                         </div>
                         <span className="modal__popup-add-schedule__form__division modal__popup-add-schedule__form__division-shorter"></span>
@@ -231,12 +231,12 @@ export default class AddSchedule extends Component {
                                 {this.state.weekdays.map(weekday => {
                                     return (
                                         <tr key={weekday.en}>
-                                            <th>{weekday.pl}</th>
+                                            <th>{weekday.en}</th>
                                             {this.state.meals.map((meal, index) => {
                                                 return (
                                                     <td key={meal}>
                                                         <select value={this.handleValue(weekday.en, index)} onChange={(e) => this.planMealSelected(e, index, weekday.en)} id={weekday.en}>
-                                                            <option>Wybierz</option>
+                                                            <option>Choose</option>
                                                             {this.state.recipes.map(recipe => {
                                                                 return <option key={recipe.id} value={recipe.name}>{recipe.name}</option>
                                                             })}
@@ -254,7 +254,7 @@ export default class AddSchedule extends Component {
                 {this.state.isSuccess && <div className="modal__success-msg" style={{ display: this.state.displayMsg }}>
                     <button className="modal__success-msg__btn" onClick={this.handleCloseMsg}><i className="fas fa-times"></i></button>
                     <i className="far fa-check-circle modal__success-msg__icon"></i>
-                    <span className="modal__success-msg__text">Twój plan został zapisany!</span>
+                    <span className="modal__success-msg__text">Your plan has been saved!</span>
                 </div>}
             </div>
         )

@@ -22,7 +22,7 @@ class PlanList extends Component {
         friday: [],
         saturday: [],
         sunday: [],
-        meals: ["śniadanie", "drugie śniadanie", "zupa", "drugie danie", "kolacja"],
+        meals: ["breakfast", "lunch", "soup", "main", "dinner"],
         weekdays: [{ pl: "poniedziałek", en: "monday" }, { pl: "wtorek", en: "tuesday" }, { pl: "środa", en: "wednesday" }, { pl: "czwartek", en: "thursday" }, { pl: "piątek", en: "friday" }, { pl: "sobota", en: "saturday" }, { pl: "niedziela", en: "sunday" }],
         recipes: [],
     }
@@ -113,15 +113,15 @@ class PlanList extends Component {
         const { name, weekNumber } = this.state
 
         if (!name.length) {
-            nameErr = "Pole wymagane"
+            nameErr = "Required field"
         }
 
         if (!weekNumber.length) {
-            weekNumberErr = "Pole wymagane"
+            weekNumberErr = "Required field"
         }
 
         if (parseFloat(weekNumber) < 1 || parseFloat(weekNumber) > 52) {
-            weekNumberErr = "Nieprawidłowa wartość pola"
+            weekNumberErr = "Invalid field value"
         }
 
         if (nameErr || weekNumberErr) {
@@ -199,7 +199,7 @@ class PlanList extends Component {
                     console.error('Error:', error);
                 });
 
-        } 
+        }
     };
 
     handleValue = (weekday, index) => {
@@ -257,70 +257,70 @@ class PlanList extends Component {
         return (
             <div className="plan-list__container">
                 <div className="plans-header">
-                    <p>Lista Planów</p>
+                    <p>Plan List</p>
                     {/* <span class="fas fa-plus-square"></span> */}
                 </div>
-                {this.state.isEditInput &&  <div className="modal__popup-add-schedule" style={{ display: this.state.display }}>
-                <form className="modal__popup-add-schedule__form" onSubmit={(e) => this.closeAndSave(e, this.state.name, this.state.description, this.state.weekNumber, this.state.monday, this.state.tuesday, this.state.wednesday, this.state.thursday, this.state.friday, this.state.saturday, this.state.sunday)}>
-                    <header className="modal__popup-add-schedule__form__header">
-                        <h1 className="modal__popup-add-schedule__form__header__title">Edytuj plan</h1>
-                        <button className="modal__popup-add-schedule__form__header__btn" type="submit">Zapisz i zamknij</button>
-                    </header>
-                    <span className="modal__popup-add-schedule__form__division"></span>
-                    <p style={{ fontSize: "1rem", color: "red" }}>{this.state.nameErr}</p>
-                    <div className="modal__popup-add-schedule__form__row">
-                        <label className="modal__popup-add-schedule__form__label" htmlFor="name">Nazwa planu</label>
-                        <input maxLength="50" type="text" id="name" value={this.state.name} onChange={this.formChange}></input>
-                    </div>
-                    <div className="modal__popup-add-schedule__form__row">
-                        <label className="modal__popup-add-schedule__form__label" htmlFor="description">Opis planu</label>
-                        <textarea maxLength="360" id="description" value={this.state.description} onChange={this.formChange}></textarea>
-                    </div>
-                    <p style={{ fontSize: "1rem", color: "red" }}>{this.state.weekNumberErr}</p>
-                    <div className="modal__popup-add-schedule__form__row">
-                        <label className="modal__popup-add-schedule__form__label" htmlFor="weekNumber">Numer tygodnia</label>
-                        <input type="number" id="weekNumber" value={this.state.weekNumber} onChange={this.formChange}></input>
-                    </div>
-                    <span className="modal__popup-add-schedule__form__division modal__popup-add-schedule__form__division-shorter"></span>
-                    <table className="modal__popup-add-schedule__form__table">
-                        <thead>
-                            <tr>
-                                <th></th>
-                                {this.state.meals.map(meal => {
-                                    return <th key={meal}>{meal}</th>
+                {this.state.isEditInput && <div className="modal__popup-add-schedule" style={{ display: this.state.display }}>
+                    <form className="modal__popup-add-schedule__form" onSubmit={(e) => this.closeAndSave(e, this.state.name, this.state.description, this.state.weekNumber, this.state.monday, this.state.tuesday, this.state.wednesday, this.state.thursday, this.state.friday, this.state.saturday, this.state.sunday)}>
+                        <header className="modal__popup-add-schedule__form__header">
+                            <h1 className="modal__popup-add-schedule__form__header__title">Edit plan</h1>
+                            <button className="modal__popup-add-schedule__form__header__btn" type="submit">Save and close<i className="fa fa-window-close" aria-hidden="true"></i></button>
+                        </header>
+                        <span className="modal__popup-add-schedule__form__division"></span>
+                        <p style={{ fontSize: "1rem", color: "red" }}>{this.state.nameErr}</p>
+                        <div className="modal__popup-add-schedule__form__row">
+                            <label className="modal__popup-add-schedule__form__label" htmlFor="name">Plan name</label>
+                            <input maxLength="50" type="text" id="name" value={this.state.name} onChange={this.formChange}></input>
+                        </div>
+                        <div className="modal__popup-add-schedule__form__row">
+                            <label className="modal__popup-add-schedule__form__label" htmlFor="description">Plan description</label>
+                            <textarea maxLength="360" id="description" value={this.state.description} onChange={this.formChange}></textarea>
+                        </div>
+                        <p style={{ fontSize: "1rem", color: "red" }}>{this.state.weekNumberErr}</p>
+                        <div className="modal__popup-add-schedule__form__row">
+                            <label className="modal__popup-add-schedule__form__label" htmlFor="weekNumber">Week number</label>
+                            <input type="number" id="weekNumber" value={this.state.weekNumber} onChange={this.formChange}></input>
+                        </div>
+                        <span className="modal__popup-add-schedule__form__division modal__popup-add-schedule__form__division-shorter"></span>
+                        <table className="modal__popup-add-schedule__form__table">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    {this.state.meals.map(meal => {
+                                        return <th key={meal}>{meal}</th>
+                                    })}
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {this.state.weekdays.map(weekday => {
+                                    return (
+                                        <tr key={weekday.en}>
+                                            <th>{weekday.en}</th>
+                                            {this.state.meals.map((meal, index) => {
+                                                return (
+                                                    <td key={meal}>
+                                                        <select value={this.handleValue(weekday.en, index)} onChange={(e) => this.planMealSelected(e, index, weekday.en)} id={weekday.en}>
+                                                            <option>Choose</option>
+                                                            {this.state.recipes.map(recipe => {
+                                                                return <option key={recipe.id} value={recipe.name}>{recipe.name}</option>
+                                                            })}
+                                                        </select>
+                                                    </td>
+                                                )
+                                            })}
+                                        </tr>
+                                    )
                                 })}
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {this.state.weekdays.map(weekday => {
-                                return (
-                                    <tr key={weekday.en}>
-                                        <th>{weekday.pl}</th>
-                                        {this.state.meals.map((meal, index) => {
-                                            return (
-                                                <td key={meal}>
-                                                    <select value={this.handleValue(weekday.en, index)} onChange={(e) => this.planMealSelected(e, index, weekday.en)} id={weekday.en}>
-                                                        <option>Wybierz</option>
-                                                        {this.state.recipes.map(recipe => {
-                                                            return <option key={recipe.id} value={recipe.name}>{recipe.name}</option>
-                                                        })}
-                                                    </select>
-                                                </td>
-                                            )
-                                        })}
-                                    </tr>
-                                )
-                            })}
-                        </tbody>
-                    </table>
-                </form>
+                            </tbody>
+                        </table>
+                    </form>
                 </div>}
                 <div className="plans-info">
                     <p className="plans__info__id">ID</p>
-                    <p className="plans__info__name">NAZWA</p>
-                    <p className="plans__info__description">OPIS</p>
-                    <p className="plans__info__week">TYDZIEŃ</p>
-                    <p className="plans__info__action">AKCJE</p>
+                    <p className="plans__info__name">Name</p>
+                    <p className="plans__info__description">Description</p>
+                    <p className="plans__info__week">Week</p>
+                    <p className="plans__info__action">Action</p>
                 </div>
                 <div className="plans__list">
                     <div className="plans plans__id">
@@ -362,15 +362,15 @@ class PlanList extends Component {
                     </div>
                 </div>
                 {this.state.isSuccess && <div className="modal__edit-msg">
-                <button className="modal__edit-msg__btn" onClick={() => this.setState({isSuccess: false})}><i className="fas fa-times"></i></button>
-                <i className="far fa-check-circle modal__edit-msg__icon" ></i>
-                <span className="modal__edit-msg__text">Edytowałeś plan!</span>
-                </div> }
+                    <button className="modal__edit-msg__btn" onClick={() => this.setState({ isSuccess: false })}><i className="fas fa-times"></i></button>
+                    <i className="far fa-check-circle modal__edit-msg__icon" ></i>
+                    <span className="modal__edit-msg__text">You've edited your plan!</span>
+                </div>}
                 {this.state.isRemoved && <div className="modal__delete-msg">
-                <button className="modal__delete-msg__btn" onClick={() => this.setState({isRemoved: false})}><i className="fas fa-times"></i></button>
-                <i className="far fa-check-circle modal__delete-msg__icon"></i>
-                <span className="modal__delete-msg__text">Usunąłeś plan!</span>
-                </div> }
+                    <button className="modal__delete-msg__btn" onClick={() => this.setState({ isRemoved: false })}><i className="fas fa-times"></i></button>
+                    <i className="far fa-check-circle modal__delete-msg__icon"></i>
+                    <span className="modal__delete-msg__text">You've deleted your plan!</span>
+                </div>}
             </div>
         );
     }

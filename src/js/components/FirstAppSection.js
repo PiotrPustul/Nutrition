@@ -2,7 +2,7 @@ import React from "react";
 
 export default class FirstAppSection extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
             name: "",
             nameErr: "",
@@ -17,9 +17,9 @@ export default class FirstAppSection extends React.Component {
 
     handleClick = () => {
 
-        if(this.state.name.length < 3) {
+        if (this.state.name.length < 3) {
             this.setState({
-                nameErr: "Pole wymagane"
+                nameErr: "Required field"
             })
         } else {
             this.setState({
@@ -37,22 +37,23 @@ export default class FirstAppSection extends React.Component {
         fetch(url, {
             method: "PATCH",
             headers: {
-                "Content-Type": "application/json"},
+                "Content-Type": "application/json"
+            },
             body: JSON.stringify(user)
         })
             .then(resp => resp.json())
-            
+
     }
 
     render() {
         return (
             <div className="first-app-section">
-                <h1 className="first-app-section__title-1">Witaj,</h1>
-                <h2 className="first-app-section__title-2"> wygląda na to, że jesteś tutaj <br></br> pierwszy raz!</h2>
-                <p style={{color:"red", fontSize: ".75rem"}}>{this.state.nameErr}</p>
-                <input className="first-app-section__input" type="text" onChange={this.handleChange} value={this.state.name} placeholder="tutaj wpisz jak masz na imię"></input>
-                <button className="first-app-section__btn" onClick={this.handleClick}>Gotowe!</button>
-                <h2 className="first-app-section__txt">Podaj nam swoje imię, a my zorganizujemy <br></br> dla Ciebie naszą aplikację :)</h2>
+                <h1 className="first-app-section__title-1">Hello,</h1>
+                <h2 className="first-app-section__title-2"> it looks like you're here <br></br> first time!</h2>
+                <p style={{ color: "red", fontSize: ".75rem" }}>{this.state.nameErr}</p>
+                <input className="first-app-section__input" type="text" onChange={this.handleChange} value={this.state.name} placeholder="here, type your name"></input>
+                <button className="first-app-section__btn" onClick={this.handleClick}>Ready!</button>
+                <h2 className="first-app-section__txt">Tell us your name and we'll arrange <br></br> our application for you </h2>
             </div>
         )
     }

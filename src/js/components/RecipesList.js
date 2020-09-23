@@ -16,7 +16,7 @@ class RecipesList extends Component {
         isEditInput: false,
         editInputValue: "",
         isSucces: false,
-        isRemoved : false,
+        isRemoved: false,
         recipeId: 0,
         isWarning: false
     }
@@ -210,29 +210,6 @@ class RecipesList extends Component {
         })
     };
 
-    // addToIngredients = e => {
-
-    //     e.preventDefault();
-    //     if (this.state.ingredient) {
-    //         if (this.state.ingredientID === -1) {
-    //             this.setState({
-    //                 ingredients: [...this.state.ingredients, this.state.ingredient],
-    //                 ingredient: ""
-    //             })
-    //         }
-    //         if (this.state.ingredientID >= 0) {
-    //             let tempArr = [...this.state.ingredients];
-    //             tempArr[this.state.ingredientID] = this.state.ingredient;
-    //             this.setState({
-    //                 ingredients: tempArr,
-    //                 ingredient: "",
-    //                 ingredientID: -1
-    //             })
-    //         }
-    //     }
-    // };
-
-
     addToSteps = e => {
         e.preventDefault();
         if (this.state.step) {
@@ -282,27 +259,27 @@ class RecipesList extends Component {
         return (
             <div className="recipes-list__container">
                 <div className="recipes__header">
-                    <p>Lista Przepisów</p>
+                    <p>Recipes List</p>
                     {/* <span class="fas fa-plus-square"></span> */}
                 </div>
                 {this.state.isEditInput && <form className="modal__popup-add-recipe" onSubmit={e => this.handlePatchToBase(e)}>
                     <div className="modal__popup-add-recipe__header">
-                        <h1>Edytuj przepis</h1>
+                        <h1>Edit recipe</h1>
                         <button type="submit" className="modal__popup-add-recipe__header_btn">Zapisz i zamknij</button>
                     </div>
                     <div className="modal__popup-add-recipe__new">
                         <div className="modal__popup-add-recipe__new__wrapper">
-                            <h3>Nazwa przepisu</h3>
+                            <h3>Recipe name</h3>
                             <input maxlength="50" type="text" required value={this.state.name} onChange={e => this.setState({ name: e.target.value })} />
                         </div>
                         <div className="modal__popup-add-recipe__new__wrapper">
-                            <h3>Opis przepisu</h3>
+                            <h3>Recipe description</h3>
                             <textarea maxlength="360" value={this.state.description} onChange={e => this.setState({ description: e.target.value })} />
                         </div>
                     </div>
                     <div className="modal__popup-add-recipe__add-list">
                         <div className="modal__popup-add-recipe__add-list__content">
-                            <h3>instrukcje</h3>
+                            <h3>Instruction</h3>
                             <div className="modal__popup-add-recipe__add-list__content__container">
                                 <textarea maxlength="150" value={this.state.step} onChange={e => this.setState({ step: e.target.value })} />
                                 <button onClick={e => this.addToSteps(e)}><i className="fas fa-plus-square"></i></button>
@@ -314,7 +291,7 @@ class RecipesList extends Component {
                             </ol>
                         </div>
                         <div className="modal__popup-add-recipe__add-list__content">
-                            <h3>składniki</h3>
+                            <h3>Ingredients</h3>
                             <div className="modal__popup-add-recipe__add-list__content__container">
                                 <textarea maxlength="50" value={this.state.ingredient} onChange={e => this.setState({ ingredient: e.target.value })} />
                                 <button onClick={e => this.addToIngredients(e)} ><i className="fas fa-plus-square"></i></button>
@@ -326,13 +303,13 @@ class RecipesList extends Component {
                             </ul>
                         </div>
                     </div>
-                    {this.state.isWarning && <span className="modal__popup-add-recipe__warning">Przepis musi zawierać co najmniej 1 instrukcję oraz składnik</span>}
+                    {this.state.isWarning && <span className="modal__popup-add-recipe__warning">The recipe must contain at least 1 instruction and an ingredient</span>}
                 </form>}
                 <div className="recipes__info">
                     <p className="recipes__info__id">ID</p>
-                    <p className="recipes__info__name">NAZWA</p>
-                    <p className="recipes__info__description">OPIS</p>
-                    <p className="recipes__info__action">AKCJA</p>
+                    <p className="recipes__info__name">Name</p>
+                    <p className="recipes__info__description">Description</p>
+                    <p className="recipes__info__action">Action</p>
                 </div>
                 <div className="recipes__list">
                     <div className="recipes recipes__id">
@@ -362,15 +339,15 @@ class RecipesList extends Component {
                     </div>
                 </div>
                 {this.state.isSucces && <div className="modal__edit-msg">
-                <button className="modal__edit-msg__btn" onClick={() => this.setState({isSucces: false})}><i className="fas fa-times"></i></button>
-                <i className="far fa-check-circle modal__edit-msg__icon"></i>
-                <span className="modal__edit-msg__text">Edytowałeś przepis!</span>
-                </div> }
+                    <button className="modal__edit-msg__btn" onClick={() => this.setState({ isSucces: false })}><i className="fas fa-times"></i></button>
+                    <i className="far fa-check-circle modal__edit-msg__icon"></i>
+                    <span className="modal__edit-msg__text">You've edited recipe!</span>
+                </div>}
                 {this.state.isRemoved && <div className="modal__delete-msg">
-                <button className="modal__delete-msg__btn" onClick={() => this.setState({isRemoved: false})}><i className="fas fa-times"></i></button>
-                <i className="far fa-check-circle modal__delete-msg__icon"></i>
-                <span className="modal__delete-msg__text">Usunąłeś przepis!</span>
-                </div> }
+                    <button className="modal__delete-msg__btn" onClick={() => this.setState({ isRemoved: false })}><i className="fas fa-times"></i></button>
+                    <i className="far fa-check-circle modal__delete-msg__icon"></i>
+                    <span className="modal__delete-msg__text">You've deleted recipe!</span>
+                </div>}
             </div >
         );
     }

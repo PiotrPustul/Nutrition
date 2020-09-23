@@ -34,20 +34,20 @@ class Widgets extends Component {
                 {
                     this.state.info && <div className="info__widget ">
                         <div><i className="fas fa-info-circle" style={{ fontSize: "40px", marginLeft: "10px" }}></i></div>
-                        <p>Masz już {this.props.length} przepisów, nieźle!</p>
+                        <p>You already have {this.props.length} recipes, nice!</p>
                         <button onClick={() => this.deleteInfoMessage()}><i className="fas fa-times"></i></button>
                     </div>
                 }
                 {this.state.warning && <div className="warning__widget ">
                     <div><i className="fa fa-exclamation-circle" style={{ fontSize: "40px", marginLeft: "10px" }}></i></div>
-                    <p>Pamiętaj, aby dodać plan!</p>
+                    <p>Remember to add a plan!</p>
                     <button onClick={() => this.deleteWarningMessage()}><i className="fas fa-times"></i></button>
                 </div>
                 }
                 {
                     this.state.success && <div className="success__widget ">
                         <div><i className="fas fa-check-circle" style={{ fontSize: "40px", marginLeft: "10px" }}></i></div>
-                        <p>Świetnie że jesteś! Udanego planowania i smaczego! {":)"}</p>
+                        <p>It's great that you are there! Happy planning and enjoy it! {":)"}</p>
                         <button onClick={() => this.deleteSuccessMessage()}><i className="fas fa-times"></i></button>
                     </div>
                 }
